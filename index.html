@@ -1518,20 +1518,25 @@ footer{
 <script>
 // 職種カード独立開閉
 function toggleJob(id, e) {
-  if (e) e.stopPropagation();
-  var det = document.getElementById("jd-" + id);
-  var btn = document.getElementById("jt-" + id);
-  if (!det || !btn) return;
-  var isOpen = det.classList.contains("open");
-  if (isOpen) {
-    det.classList.remove("open");
-    btn.classList.remove("open");
-    btn.innerHTML = '詳細を見る <span class="jtoggle-ico">▼</span>';
-  } else {
-    det.classList.add("open");
-    btn.classList.add("open");
-    btn.innerHTML = '閉じる <span class="jtoggle-ico">▼</span>';
-  }
+     if (e) e.stopPropagation();
+     var det = document.getElementById("jd-" + id);
+     var btn = document.getElementById("jt-" + id);
+     if (!det || !btn) return;
+     var isOpen = det.classList.contains("open");
+     [1,2,3].forEach(function(i){
+            var d = document.getElementById("jd-"+i);
+            var b = document.getElementById("jt-"+i);
+            if(d && b){
+                     d.classList.remove("open");
+                     b.classList.remove("open");
+                     b.innerHTML = '詳細を見る <span class="jtoggle-ico">▼</span>';
+            }
+     });
+     if (!isOpen) {
+            det.classList.add("open");
+            btn.classList.add("open");
+            btn.innerHTML = '閉じる <span class="jtoggle-ico">▲</span>';
+     }
 }
 
 // タブ
