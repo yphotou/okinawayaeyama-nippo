@@ -409,7 +409,7 @@ a{color:inherit;text-decoration:none;}
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:var(--sp-md);
-  align-items:stretch;
+  align-items:start;
 }
 /* カード本体 */
 .jcard{
@@ -439,7 +439,7 @@ a{color:inherit;text-decoration:none;}
 .jcard-head{
   padding:var(--sp-md) var(--sp-md) var(--sp-sm);
   border-bottom:var(--bd);
-  flex:1;
+  flex:0 0 auto;
   display:flex;
   flex-direction:column;
 }
@@ -1521,20 +1521,23 @@ function toggleJob(id, e) {
      if (e) e.stopPropagation();
      var det = document.getElementById("jd-" + id);
      var btn = document.getElementById("jt-" + id);
-     var card = document.getElementById("card-" + id);
-     if (!det || !btn || !card) return;
+     if (!det || !btn) return;
      var isOpen = det.classList.contains("open");
      if (isOpen) {
           det.classList.remove("open");
           btn.classList.remove("open");
           btn.innerHTML = '詳細を見る <span class="jtoggle-ico">▼</span>';
-          card.style.alignSelf = '';
      } else {
           det.classList.add("open");
           btn.classList.add("open");
           btn.innerHTML = '閉じる <span class="jtoggle-ico">▲</span>';
-          card.style.alignSelf = 'start';
      }
+}
+function initCardHeights() {
+     var cards = [document.getElementById('card-1'), document.getElementById('card-2'), document.getElementById('card-3')].filter(Boolean);
+     cards.forEach(function(c){ c.style.minHeight = ''; });
+     var maxH = Math.max.apply(null, cards.map(function(c){ return c.offsetHeight; }));
+     cards.forEach(function(c){ c.style.minHeight = maxH + 'px'; });
 }
 
 // タブ
@@ -1616,7 +1619,7 @@ function submitForm() {
 // スクロールリビール
 var ro = new IntersectionObserver(function(entries) {
   entries.forEach(function(e) {
-    if (e.isIntersecting) { e.target.classList.add("in"); ro.unobserve(e.target); }
+    if (e.isIntersecting) { e.target.classList.add("in"); ro.unobserve(e.target); if(e.target.classList.contains('jobs-grid')) setTimeout(initCardHeights,50); }
   });
 }, { threshold: 0.07 });
 document.querySelectorAll(".reveal").forEach(function(el) { ro.observe(el); });
