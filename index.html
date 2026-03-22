@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&family=Noto+Sans+JP:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   RESET & BASE
+   RESET & BAS
    ============================================================ */
 *,*::before,*::after{box-sizing:bordr-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;color-scheme:light;}
@@ -1523,19 +1523,14 @@ function toggleJob(id, e) {
      var btn = document.getElementById("jt-" + id);
      if (!det || !btn) return;
      var isOpen = det.classList.contains("open");
-     [1,2,3].forEach(function(i){
-            var d = document.getElementById("jd-"+i);
-            var b = document.getElementById("jt-"+i);
-            if(d && b){
-                     d.classList.remove("open");
-                     b.classList.remove("open");
-                     b.innerHTML = '詳細を見る <span class="jtoggle-ico">▼</span>';
-            }
-     });
-     if (!isOpen) {
-            det.classList.add("open");
-            btn.classList.add("open");
-            btn.innerHTML = '閉じる <span class="jtoggle-ico">▲</span>';
+     if (isOpen) {
+          det.classList.remove("open");
+          btn.classList.remove("open");
+          btn.innerHTML = '詳細を見る <span class="jtoggle-ico">▼</span>';
+     } else {
+          det.classList.add("open");
+          btn.classList.add("open");
+          btn.innerHTML = '閉じる <span class="jtoggle-ico">▲</span>';
      }
 }
 
