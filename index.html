@@ -10,7 +10,7 @@
 /* ============================================================
    RESET & BAS
    =========================================================== */
-*,*::before,*::after{box-sizing:bordr-box;margin:0;padding:0;}
+*,*::before,*::after{box-sizing:borr-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;color-schemelight;}
 body{
   font-family:'Noto Sans JP',sans-serif;
@@ -1112,12 +1112,16 @@ footer{
   .steps-list::before{display:none;}
   .foot-inner{grid-template-columns:1fr;}
   .frow{grid-template-columns:1fr;}
+
+  .president-msg{grid-template-columns:1fr;}
+  .president-photo{position:static;}
+  .staff-grid{grid-template-columns:1fr;}
 }
 @media(max-width:600px){
   :root{--sp-lg:32px;--sp-xl:56px;--sp-2xl:80px;}
   .hero-title{font-size:1.8rem;}
   .stats-grid{grid-template-columns:1fr 1fr;}
-  .steps-list{grid-template-columns:1fr;}
+  .steps-list{grid-template-columns:1fr;}.president-msg{grid-template-columns:1fr;}.president-photo{position:static;}.staff-grid{grid-template-columns:1fr;}
 }
 
 /* ============================================================
