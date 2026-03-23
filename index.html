@@ -812,15 +812,18 @@ a{color:inherit;text-decoration:none;}
 }
 .staff-modal-photo{
   width:100%;
-  aspect-ratio:16/9;
+  aspect-ratio:4/3;
   overflow:hidden;
   flex-shrink:0;
+  background:#1a1a1a;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 .staff-modal-photo img{
   width:100%;
   height:100%;
-  object-fit:cover;
-  object-position:center top;
+  object-fit:contain;
   display:block;
 }
 .staff-modal-content{
@@ -1137,12 +1140,22 @@ footer{
   .president-msg{grid-template-columns:1fr;}
   .president-photo{position:static;}
   .staff-grid{grid-template-columns:1fr;}
+  .staff-modal-inner{max-width:100%;border-radius:0;}
+  .staff-modal-photo{aspect-ratio:4/3;}
+  .staff-modal-content{padding:20px 20px 28px;}
 }
 @media(max-width:600px){
   :root{--sp-lg:32px;--sp-xl:56px;--sp-2xl:80px;}
   .hero-title{font-size:1.8rem;}
   .stats-grid{grid-template-columns:1fr 1fr;}
   .steps-list{grid-template-columns:1fr;}.president-msg{grid-template-columns:1fr;}.president-photo{position:static;}.staff-grid{grid-template-columns:1fr;}
+  .modal-ov{padding:0;align-items:flex-end;}
+  .staff-modal-inner{max-width:100%;width:100%;border-radius:16px 16px 0 0;max-height:92vh;}
+  .staff-modal-photo{aspect-ratio:3/2;}
+  .staff-modal-content{padding:16px 18px 32px;}
+  .staff-modal-meta .staff-name{font-size:18px;}
+  .staff-qa dt{font-size:12px;}
+  .staff-qa dd{font-size:14px;}
 }
 
 /* ============================================================
