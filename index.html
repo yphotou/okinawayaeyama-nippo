@@ -607,9 +607,22 @@ a{color:inherit;text-decoration:none;}
 .rpanel{display:none;padding:var(--sp-lg) 0;}
 .rpanel.active{display:block;}
 .rpanel-inner{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:var(--sp-lg);
+  display:grid;grid-template-columns:1fr 360px;
+  gap:var(--sp-xl);
   align-items:start;
+}
+.rpanel-img{
+  width:100%;
+  aspect-ratio:3/2;
+  background:var(--gray-1);
+  border-radius:8px;
+  overflow:hidden;
+}
+.rpanel-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
 .rpanel h3{
   font-family:var(--serif);
@@ -619,8 +632,8 @@ a{color:inherit;text-decoration:none;}
   padding-bottom:var(--sp-sm);
   border-bottom:var(--bd);
 }
-.rpanel p{font-size:16px;color:var(--ink-3);line-height:1.9;margin-bottom:var(--sp-md);}
-.rtags{display:flex;flex-wrap:wrap;gap:6px;}
+.rpanel p{font-size:16px;color:var(--ink-3);line-height:1.9;margin-bottom:0;}
+.rtags{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 18px;}
 .rtag{
   font-size:13px;font-weight:500;
   letter-spacing:.06em;
@@ -1306,50 +1319,57 @@ footer{
     </div>
     <div class="reveal">
       <div class="rtabs">
-        <div class="rtab active" onclick="switchTab(this,'mid')">中途採用（メイン）</div>
+        <div class="rtab active" onclick="switchTab(this,'mid')">中途採用</div>
         <div class="rtab" onclick="switchTab(this,'new')">新卒採用</div>
         <div class="rtab" onclick="switchTab(this,'intern')">インターン</div>
       </div>
       <div class="rpanel active" id="panel-mid">
         <div class="rpanel-inner">
-          <div>
+          <div class="rpanel-text">
             <h3>中途採用</h3>
+            <div class="rtags">
+              <span class="rtag hl">通年採用</span>
+              <span class="rtag hl">最短1ヶ月入社</span>
+              <span class="rtag">異業種転職歓迎</span>
+              <span class="rtag">オンライン面接対応</span>
+            </div>
             <p>全職種で通年採用を実施しています。業界経験者はもちろん、異業種からの転職も歓迎。沖縄という特別なフィールドで、あなたのキャリアを次のステージへ。最短1ヶ月での入社が可能です。オンライン面接対応。</p>
           </div>
-          <div class="rtags">
-            <span class="rtag hl">通年採用</span>
-            <span class="rtag hl">最短2週間入社</span>
-            <span class="rtag">異業種転職歓迎</span>
-            <span class="rtag">移住サポートあり</span>
-            <span class="rtag">オンライン面接可</span>
+          <div class="rpanel-img">
+            <img src="img/recruit-mid.jpg" alt="中途採用イメージ" loading="lazy">
           </div>
         </div>
       </div>
       <div class="rpanel" id="panel-new">
         <div class="rpanel-inner">
-          <div>
+          <div class="rpanel-text">
             <h3>新卒採用</h3>
+            <div class="rtags">
+              <span class="rtag hl">学部・専攻不問</span>
+              <span class="rtag">インターンから本採用ルートあり</span>
+              <span class="rtag">入社前研修あり</span>
+            </div>
             <p>学部・専攻不問、ジャーナリズムへの熱意を重視します。小さな組織だからこそ、一人ひとりが早くから主役になれます。インターンから本採用へのルートもあり、焦らず自分のペースで成長できる環境です。</p>
           </div>
-          <div class="rtags">
-            <span class="rtag hl">学部・専攻不問</span>
-            <span class="rtag">作文選考あり</span>
-            <span class="rtag">インターンから本採用ルートあり</span>
-            <span class="rtag">入社前研修あり</span>
+          <div class="rpanel-img">
+            <img src="img/recruit-new.jpg" alt="新卒採用イメージ" loading="lazy">
           </div>
         </div>
       </div>
       <div class="rpanel" id="panel-intern">
         <div class="rpanel-inner">
-          <div>
+          <div class="rpanel-text">
             <h3>インターン</h3>
+            <div class="rtags">
+              <span class="rtag hl">取材同行・記事執筆体験</span>
+              <span class="rtag">中長期優先</span>
+              <span class="rtag">本採用へのルートあり</span>
+              <span class="rtag">滞在サポート相談可</span>
+            </div>
             <p>中長期インターンを優先的に受け入れています。取材同行・記事執筆・制作補助など、実務に直結した内容で現場を体感できます。石垣島・沖縄本島どちらでも受け入れており、沖縄という特別な環境で働く経験は、きっとあなたのキャリアの土台になります。</p>
           </div>
-          <div class="rtags">
-            <span class="rtag hl">取材同行・記事執筆体験</span>
-            <span class="rtag">1週間〜3ヶ月</span>
-            <span class="rtag">本採用へのルートあり</span>
-            <span class="rtag">滞在サポート相談可</span>
+          <div class="rpanel-img">
+            <img src="img/recruit-intern.jpg" alt="インターンイメージ" loading="lazy">
           </div>
         </div>
       </div>
