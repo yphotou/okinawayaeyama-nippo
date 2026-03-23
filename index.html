@@ -782,6 +782,9 @@ a{color:inherit;text-decoration:none;}
   overflow:hidden;
   position:relative;
   box-shadow:0 24px 64px rgba(0,0,0,.18);
+  max-height:90vh;
+  display:flex;
+  flex-direction:column;
 }
 .staff-modal-inner .modal-close{
   position:absolute;
@@ -804,10 +807,12 @@ a{color:inherit;text-decoration:none;}
 .staff-modal-layout{
   display:flex;
   flex-direction:column;
+  overflow-y:auto;
+  flex:1;
 }
 .staff-modal-photo{
   width:100%;
-  aspect-ratio:4/3;
+  aspect-ratio:16/9;
   overflow:hidden;
   flex-shrink:0;
 }
@@ -820,8 +825,6 @@ a{color:inherit;text-decoration:none;}
 }
 .staff-modal-content{
   padding:28px 32px 32px;
-  overflow-y:auto;
-  max-height:55vh;
 }
 .staff-modal-meta{
   display:flex;
