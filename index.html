@@ -656,49 +656,185 @@ a{color:inherit;text-decoration:none;}
   padding:var(--sp-2xl) 0;
   border-bottom:var(--bd);
 }
-.manifesto-layout{
+
+/* 社長メッセージ */
+.president-msg{
   display:grid;
-  grid-template-columns:1fr 1px 1fr;
-  gap:var(--sp-lg);
-  align-items:center;
+  grid-template-columns:340px 1fr;
+  gap:var(--sp-xl);
+  align-items:start;
+  margin-bottom:var(--sp-2xl);
 }
-.manifesto-div{background:var(--gray-4);align-self:stretch;}
-.manifesto-text{}
-.manifesto-text p{
-  font-size:16px;color:var(--ink-3);line-height:1.95;
-  margin-bottom:var(--sp-md);
+.president-photo{
+  width:100%;
+  border-radius:4px;
+  overflow:hidden;
+  position:sticky;
+  top:80px;
 }
-.manifesto-text p:last-child{margin-bottom:0;}
-.manifesto-quote{
-  padding-left:var(--sp-lg);
+.president-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
-.quote-mark{
-  font-family:var(--display);
-  font-size:5rem;
-  color:var(--gray-4);
-  line-height:1;
-  margin-bottom:-var(--sp-sm);
-  font-style:italic;
-}
-.quote-body{
-  font-family:var(--serif);
-  font-size:20px;font-weight:700;
-  line-height:1.8;
-  letter-spacing:.04em;
-  color:var(--ink);
+.president-text .sec-label{
   margin-bottom:var(--sp-sm);
 }
-.quote-src{
-  font-size:13px;
-  letter-spacing:.1em;
-  color:var(--gray-1);
-  padding-top:var(--sp-sm);
-  border-top:1px solid var(--gray-4);
+.president-heading{
+  font-family:var(--serif);
+  font-size:clamp(2rem,4vw,3rem);
+  font-weight:900;
+  letter-spacing:.06em;
+  line-height:1.2;
+  margin-bottom:var(--sp-md);
+  color:#111;
+}
+.president-text p{
+  font-size:16px;
+  color:var(--ink-3);
+  line-height:1.95;
+  margin-bottom:var(--sp-md);
+}
+.president-sig{
+  font-family:var(--serif);
+  font-size:15px;
+  color:#111;
+  font-weight:700;
+  margin-top:var(--sp-lg);
+  padding-top:var(--sp-md);
+  border-top:var(--bd);
 }
 
-/* ============================================================
-   選考ステップ
-   ============================================================ */
+/* 社員の声 */
+.staff-voices-hd{
+  margin-bottom:var(--sp-lg);
+}
+.staff-voices-title{
+  font-family:var(--serif);
+  font-size:1.6rem;
+  font-weight:900;
+  letter-spacing:.04em;
+}
+.staff-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:var(--sp-md);
+}
+.staff-card{
+  cursor:pointer;
+  background:#fff;
+  border:var(--bd);
+  border-radius:4px;
+  overflow:hidden;
+  transition:box-shadow .25s, transform .25s;
+}
+.staff-card:hover{
+  box-shadow:0 8px 32px rgba(0,0,0,.10);
+  transform:translateY(-4px);
+}
+.staff-card-photo{
+  aspect-ratio:3/4;
+  overflow:hidden;
+}
+.staff-card-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .4s;
+}
+.staff-card:hover .staff-card-photo img{
+  transform:scale(1.05);
+}
+.staff-card-body{
+  padding:var(--sp-md);
+}
+.staff-quote{
+  font-family:var(--serif);
+  font-size:15px;
+  line-height:1.85;
+  color:#111;
+  margin-bottom:var(--sp-sm);
+}
+.staff-name{
+  font-family:var(--serif);
+  font-size:16px;
+  font-weight:700;
+  color:#111;
+  margin-bottom:4px;
+}
+.staff-meta{
+  font-size:13px;
+  color:var(--gray-1);
+}
+
+/* 社員モーダル */
+.staff-modal-inner{
+  max-width:720px;
+  position:relative;
+}
+.staff-modal-inner .modal-close{
+  position:absolute;
+  top:var(--sp-md);
+  right:var(--sp-md);
+  z-index:2;
+  background:none;
+  border:none;
+  font-size:18px;
+  cursor:pointer;
+  color:var(--gray-1);
+  line-height:1;
+  padding:4px 8px;
+}
+.staff-modal-inner .modal-close:hover{
+  color:#111;
+}
+.staff-modal-layout{
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  min-height:420px;
+}
+.staff-modal-photo{
+  overflow:hidden;
+}
+.staff-modal-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.staff-modal-content{
+  padding:var(--sp-lg) var(--sp-md);
+  overflow-y:auto;
+  max-height:90vh;
+}
+.staff-modal-meta{
+  padding-bottom:var(--sp-md);
+  margin-bottom:var(--sp-md);
+  border-bottom:var(--bd);
+}
+.staff-modal-meta .staff-name{
+  font-size:20px;
+  margin-bottom:4px;
+}
+.staff-qa{
+  display:flex;
+  flex-direction:column;
+  gap:var(--sp-md);
+}
+.staff-qa dt{
+  font-size:14px;
+  font-weight:700;
+  color:var(--red);
+  margin-bottom:6px;
+}
+.staff-qa dd{
+  font-size:15px;
+  color:var(--ink-3);
+  line-height:1.85;
+  margin:0;
+}
 .steps-section{
   padding:var(--sp-2xl) 0;
   background:var(--gray-6);
@@ -1378,25 +1514,111 @@ footer{
 </section>
 
 <!-- マニフェスト -->
-<section class="manifesto-section">
+<section class="manifesto-section" id="culture">
   <div class="w">
-    <div class="manifesto-layout reveal">
-      <div class="manifesto-text">
-        <div class="sec-label" style="margin-bottom:16px;">Our Culture</div>
-        <h2 style="font-family:var(--serif);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:900;line-height:1.3;letter-spacing:.04em;margin-bottom:var(--sp-md);">「沖縄には、<br>もう一つの声がある。」</h2>
-        <p>沖縄の2大紙が95%のシェアを握る言論空間で、私たちは小さくても独立した視座を持ち続けてきました。公正中立を旗印に、沖縄メディアに新しい選択肢を生み出すことが私たちの存在理由です。</p>
-        <p>記者も営業も制作も──「この新聞が必要だ」という信念を持って働ける人を求めています。政治的圧力に負けず報道を続けてきた現場で、あなたの力を試してください。</p>
-        <button class="btn-primary" onclick="openModal()" style="margin-top:var(--sp-md);">まず話を聞いてみる →</button>
+
+    <!-- =====================================================
+         Our Culture セクション
+         写真・名前・テキストはすべて仮。後で実際のものに差し替え予定
+         ===================================================== -->
+
+    <!-- セクションヘッダー -->
+    <div class="sec-header reveal">
+      <div class="sec-header-num">04</div>
+      <div class="sec-header-body">
+        <div class="sec-label">Our Culture</div>
+        <h2 class="sec-title">社風・カルチャー</h2>
       </div>
-      <div class="manifesto-div"></div>
-      <div class="manifesto-quote">
-        <div class="quote-mark">"</div>
-        <p class="quote-body">公正中立な報道と適切な論評で誰にでもわかりやすく、愛される紙面づくりを進めています。</p>
-        <div class="quote-src">— 株式会社八重山日報社 · 社是</div>
+    </div>
+
+    <!-- 社長メッセージ -->
+    <div class="president-msg reveal">
+      <div class="president-photo">
+        <!-- TODO: 実際の社長写真に差し替え -->
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80&auto=format&fit=crop" alt="代表取締役社長">
+      </div>
+      <div class="president-text">
+        <div class="sec-label">代表取締役社長メッセージ</div>
+        <h3 class="president-heading">守一隅照千里</h3>
+        <!-- TODO: 実際の社長メッセージに差し替え -->
+        <p>「守一隅照千里」——私たちが大切にしている言葉です。自分たちに与えられた役割を誠実に果たし続けることが、やがて沖縄全域へ、日本全体へとつながっていく。その信念を持って、報道を続けています。</p>
+        <p>小さな新聞社かもしれません。でも、この地に根ざした報道だからこそ見えるものがある。伝えられることがある。沖縄という場所にしかない視点と現場が、ここにあります。私たちはその信念を持って、47年間発信し続けてきました。</p>
+        <p>地域の暮らし、尖閣・南西諸島の安全保障、離島経済、文化——ここで生まれるニュースは、日本の今を映し出す鏡でもあります。私たちが伝え続けることで、この地域の人々の判断を支え、社会の議論を豊かにできると信じています。</p>
+        <p>いま私たちは、石垣島から沖縄全域へと歩みを広げようとしています。報道の力で地域を支えることが私たちの使命です。その歩みを止めることなく、前へ進み続けます。</p>
+        <!-- TODO: 実際の社長名に差し替え -->
+        <p class="president-sig">代表取締役社長　宮里 育江</p>
+      </div>
+    </div>
+
+    <!-- 社員の声 -->
+    <div class="staff-voices reveal">
+      <div class="staff-voices-hd">
+        <div class="sec-label">People</div>
+        <h3 class="staff-voices-title">社員の声</h3>
+      </div>
+      <div class="staff-grid">
+
+        <!-- カード1：記者 / TODO: 実際の写真・名前・コメントに差し替え -->
+        <div class="staff-card" data-staff="1" role="button" tabindex="0" aria-haspopup="dialog">
+          <div class="staff-card-photo">
+            <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=600&q=80&auto=format&fit=crop" alt="仮名A">
+          </div>
+          <div class="staff-card-body">
+            <p class="staff-quote">「取材で得た情報が、そのまま紙面になる。自分の判断が問われる環境だからこそ、毎日成長できています。」</p>
+            <p class="staff-name">仮名A</p>
+            <p class="staff-meta">記者 ／ 2021年入社</p>
+          </div>
+        </div>
+
+        <!-- カード2：営業 / TODO: 実際の写真・名前・コメントに差し替え -->
+        <div class="staff-card" data-staff="2" role="button" tabindex="0" aria-haspopup="dialog">
+          <div class="staff-card-photo">
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80&auto=format&fit=crop" alt="仮名B">
+          </div>
+          <div class="staff-card-body">
+            <p class="staff-quote">「地域の企業や人と直接つながれる仕事です。石垣島だからこそ、一人ひとりと深く関われる。それがやりがいです。」</p>
+            <p class="staff-name">仮名B</p>
+            <p class="staff-meta">営業 ／ 2020年入社</p>
+          </div>
+        </div>
+
+        <!-- カード3：制作 / TODO: 実際の写真・名前・コメントに差し替え -->
+        <div class="staff-card" data-staff="3" role="button" tabindex="0" aria-haspopup="dialog">
+          <div class="staff-card-photo">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&q=80&auto=format&fit=crop" alt="仮名C">
+          </div>
+          <div class="staff-card-body">
+            <p class="staff-quote">「紙面のデザインからWebまで幅広く担当。自分の作ったデザインが毎日読者に届く。それが何より励みになっています。」</p>
+            <p class="staff-name">仮名C</p>
+            <p class="staff-meta">制作 ／ 2022年入社</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 社員モーダル（staff-modal） -->
+<!-- TODO: 実際の社員情報に差し替え -->
+<div class="modal-ov" id="staff-modal" onclick="handleStaffOvClick(event)">
+  <div class="modal staff-modal-inner">
+    <button class="modal-close" onclick="closeStaffModal()" aria-label="閉じる">✕</button>
+    <div class="staff-modal-layout">
+      <div class="staff-modal-photo">
+        <img id="staff-modal-img" src="" alt="">
+      </div>
+      <div class="staff-modal-content">
+        <div class="staff-modal-meta">
+          <p id="staff-modal-role" class="staff-meta"></p>
+          <p id="staff-modal-name" class="staff-name"></p>
+        </div>
+        <dl class="staff-qa" id="staff-modal-qa"></dl>
       </div>
     </div>
   </div>
-</section>
+</div>
 
 <!-- 選考フロー -->
 <section class="steps-section" id="steps">
@@ -1666,6 +1888,76 @@ function closeDrawer() {
   document.getElementById('drawerOverlay').classList.remove('open');
   document.body.style.overflow = '';
 }
+
+
+/* ---- 社員モーダル ---- */
+const staffData = [
+  {
+    // TODO: 実際の社員情報に差し替え
+    name:'仮名A', role:'記者', year:'2021年入社',
+    img:'https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=600&q=80&auto=format&fit=crop',
+    qa:[
+      {q:'この会社を選んだ理由は？',a:'大手では経験できない幅広い取材ができると感じたからです。石垣島という特別な場所で、自分の力を試したいと思いました。'},
+      {q:'仕事のやりがいを教えてください。',a:'自分が取材した記事が読者に届き、地域の人々の反応を直接感じられることです。記者として社会に貢献していることを実感できます。'},
+      {q:'どんな人と一緒に働きたいですか？',a:'沖縄・石垣島という場所に興味があり、報道を通じて地域に貢献したいという熱意を持った方と働きたいです。'}
+    ]
+  },
+  {
+    // TODO: 実際の社員情報に差し替え
+    name:'仮名B', role:'営業', year:'2020年入社',
+    img:'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80&auto=format&fit=crop',
+    qa:[
+      {q:'この会社を選んだ理由は？',a:'地域に密着した仕事がしたいと思っていました。新聞社の営業は、地域の企業や人々と深く関われる仕事だと感じ、入社を決めました。'},
+      {q:'仕事のやりがいを教えてください。',a:'地域の企業と一緒に広告を作り、それが紙面に載ったときの達成感は格別です。地域経済を支えているという実感があります。'},
+      {q:'どんな人と一緒に働きたいですか？',a:'人と話すことが好きで、地域に貢献したいという気持ちを持った方。経験よりも熱意を大切にしています。'}
+    ]
+  },
+  {
+    // TODO: 実際の社員情報に差し替え
+    name:'仮名C', role:'制作', year:'2022年入社',
+    img:'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&q=80&auto=format&fit=crop',
+    qa:[
+      {q:'この会社を選んだ理由は？',a:'デザインと報道の両方に関わりたいと思っていました。紙面デザインからWebまで幅広く担当できるこの環境は、自分にとって理想的でした。'},
+      {q:'仕事のやりがいを教えてください。',a:'毎日締め切りに向けて紙面を仕上げる達成感と、自分のデザインが読者に届くという実感です。チームで作り上げる一体感も好きです。'},
+      {q:'どんな人と一緒に働きたいですか？',a:'デザインへの情熱と、地域メディアへの興味を持った方。未経験でも意欲があれば大歓迎です。'}
+    ]
+  }
+];
+
+function openStaffModal(idx){
+  const d = staffData[idx-1];
+  if(!d) return;
+  document.getElementById('staff-modal-img').src = d.img;
+  document.getElementById('staff-modal-img').alt = d.name;
+  document.getElementById('staff-modal-name').textContent = d.name;
+  document.getElementById('staff-modal-role').textContent = d.role + '　' + d.year;
+  const qa = document.getElementById('staff-modal-qa');
+  qa.innerHTML = d.qa.map(item =>
+    '<dt>Q. ' + item.q + '</dt><dd>A. ' + item.a + '</dd>'
+  ).join('');
+  document.getElementById('staff-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeStaffModal(){
+  document.getElementById('staff-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function handleStaffOvClick(e){
+  if(e.target === e.currentTarget) closeStaffModal();
+}
+
+// 社員カードのクリックイベント
+document.querySelectorAll('.staff-card').forEach(card => {
+  card.addEventListener('click', () => openStaffModal(+card.dataset.staff));
+  card.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' ') openStaffModal(+card.dataset.staff); });
+});
+
+// ESCキーで社員モーダルを閉じる
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape') closeStaffModal();
+});
 </script>
 </body>
 </html>
